@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>random-icon-from-internet.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -80,7 +80,7 @@
     <None Include="Resources\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="random-icon-from-internet.ico" />
     <None Include="Resources\random-icon-from-internet.ico" />
     <None Include="Resources\2.ico" />
     <None Include="Resources\1.ico" />
