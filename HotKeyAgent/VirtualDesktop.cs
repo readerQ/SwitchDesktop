@@ -1,7 +1,6 @@
 // Author: Markus Scholtes, 2020
 // Version 1.7, 2020-06-16
 // Version for Windows 10 1809 and up
-// https://github.com/MScholtes/VirtualDesktop
 // Compile with:
 // C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe VirtualDesktop.cs
 

@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\random-icon-from-internet.ico" />
     <None Include="Resources\2.ico" />
     <None Include="Resources\1.ico" />
     <None Include="Resources\5.ico" />

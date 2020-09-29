@@ -3,6 +3,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
+/// <summary>
+/// UPD Socket
+/// (c) https://gist.github.com/darkguy2008/413a6fea3a5b4e67e5e0d96f750088a9
+/// </summary>
 namespace UdpLib
 {
 
@@ -49,7 +53,6 @@ namespace UdpLib
             {
                 State so = (State)ar.AsyncState;
                 int bytes = _socket.EndSend(ar);
-             //   Console.WriteLine("SEND: {0}, {1}", bytes, text);
             }, state);
         }
 

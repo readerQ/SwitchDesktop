@@ -113,9 +113,9 @@ namespace HotKeyAgent.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
-        internal static System.Drawing.Icon fav {
+        internal static System.Drawing.Icon random_icon_from_internet {
             get {
-                object obj = ResourceManager.GetObject("fav", resourceCulture);
+                object obj = ResourceManager.GetObject("random_icon_from_internet", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

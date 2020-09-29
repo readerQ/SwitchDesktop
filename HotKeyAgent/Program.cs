@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using UdpLib;
 
 namespace HotKeyAgent
 {
@@ -13,13 +12,10 @@ namespace HotKeyAgent
         private static void Main()
         {
 
-
-            
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new MyCustomApplicationContext());
+
         }
     }
 }
