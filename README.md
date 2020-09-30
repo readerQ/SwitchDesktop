@@ -9,6 +9,6 @@
 ## FlipFlopHScroll
 * read HID devices in registry (@"Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID")
 * find Device Parameters\FlipFlopHScroll
-* Flip-Flop H Scroll
+* Flip-Flop H Scroll (admin privilege needed)
 
 чукча не писатель

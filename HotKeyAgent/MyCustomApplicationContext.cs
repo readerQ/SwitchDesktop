@@ -49,7 +49,7 @@ namespace HotKeyAgent
 
         private MenuItem MouseMenu()
         {
-            string key = @"Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID";
+
             RegistryKey a = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Enum\HID");
 
             MenuItem moueseMenuItem = new MenuItem("Mouse");
@@ -77,19 +77,13 @@ namespace HotKeyAgent
                                 moueseMenuItem.MenuItems.Add(new MenuItem($"{name} ({(flip == 1 ? "good" : "not good")})", FlipFlop) { Tag = new MouseRegistry() { Path = d.Name, HFlip = flip } });
                             }
                         }
-                        catch (Exception e)
+                        catch
                         {
-                            ;
                         }
-
                     }
-
-
-
                 }
-                catch (Exception e)
+                catch
                 {
-                    ;
                 }
 
             }
