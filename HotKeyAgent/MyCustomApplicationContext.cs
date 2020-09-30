@@ -59,8 +59,6 @@ namespace HotKeyAgent
                 try
                 {
                     RegistryKey b2 = a.OpenSubKey(name);
-                    //RegistryKey b = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Enum\HID\${name}");
-
 
                     foreach (string subname in b2.GetSubKeyNames())
                     {
@@ -73,13 +71,11 @@ namespace HotKeyAgent
 
                             if (list.Any(s => s.Equals("FlipFlopHScroll")))
                             {
-                                var val = d.GetValue("FlipFlopHScroll");
+                                object val = d.GetValue("FlipFlopHScroll");
                                 int flip = (int)val;
 
                                 moueseMenuItem.MenuItems.Add(new MenuItem($"{name} ({(flip == 1 ? "good" : "not good")})", FlipFlop) { Tag = new MouseRegistry() { Path = d.Name, HFlip = flip } });
                             }
-
-                            //Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Enum\HID\{name}\{subname}\Device Parameters");
                         }
                         catch (Exception e)
                         {
@@ -99,26 +95,15 @@ namespace HotKeyAgent
             }
 
             return moueseMenuItem;
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    MenuItem item = new MenuItem($"Desktop {(i + 1)}", OpenDesktop);
-            //    item.Tag = i;
-            //    moueseMenuItem.MenuItems.Add(item);
-            //}
+
         }
 
-
-        class MouseRegistry
-        {
-            public string Path { get; set; }
-            public int HFlip { get; set; }
-        }
         private void FlipFlop(object sender, EventArgs e)
         {
             try
             {
-                var menu = (MenuItem)sender;
-                var reg = (MouseRegistry)menu.Tag;
+                MenuItem menu = (MenuItem)sender;
+                MouseRegistry reg = (MouseRegistry)menu.Tag;
                 Registry.SetValue(reg.Path, "FlipFlopHScroll", 1 - reg.HFlip);
                 MessageBox.Show("done :). need reboot :(");
             }
