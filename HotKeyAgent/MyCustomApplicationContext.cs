@@ -69,9 +69,9 @@ namespace HotKeyAgent
                             RegistryKey d = c.OpenSubKey("Device Parameters");
                             string[] list = d.GetValueNames();
 
-                            if (list.Any(s => s.Equals("FlipFlopHScroll")))
+                            if (list.Any(s => s.Equals("FlipFlopWheel")))
                             {
-                                object val = d.GetValue("FlipFlopHScroll");
+                                object val = d.GetValue("FlipFlopWheel");
                                 int flip = (int)val;
 
                                 moueseMenuItem.MenuItems.Add(new MenuItem($"{name} ({(flip == 1 ? "good" : "not good")})", FlipFlop) { Tag = new MouseRegistry() { Path = d.Name, HFlip = flip } });
@@ -98,7 +98,7 @@ namespace HotKeyAgent
             {
                 MenuItem menu = (MenuItem)sender;
                 MouseRegistry reg = (MouseRegistry)menu.Tag;
-                Registry.SetValue(reg.Path, "FlipFlopHScroll", 1 - reg.HFlip);
+                Registry.SetValue(reg.Path, "FlipFlopWheel", 1 - reg.HFlip);
                 MessageBox.Show("done :). need reboot :(");
             }
             catch (Exception exception)
